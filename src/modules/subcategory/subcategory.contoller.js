@@ -1,6 +1,6 @@
 import slugify from "slugify";
 import { Category } from "../../../db/models/category.model.js";
-import { Subcategory } from "../../../db/models/subcategoty.model.js";
+import { Subcategory } from "../../../db/models/subcategory.model.js";
 import { AppError } from "../../utils/appError.js";
 import { messages } from "../../utils/constant/messages.js";
 
