@@ -4,7 +4,7 @@ import path from "path";
 import { nanoid } from "nanoid";
 import multer, { diskStorage } from "multer";
 
-const fileValidation = {
+export const fileValidation = {
   image: ["image/jpeg", "image/png", "image/gif"], // تم تعديل "image/jpg" إلى "image/jpeg"
   file: ["application/pdf", "application/msword"],
   video: ["video/mp4"],

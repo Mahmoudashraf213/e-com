@@ -10,5 +10,6 @@ const generateMessage = (entity) => ({
 export const messages = {
   category: generateMessage("category"),
   subcategory: generateMessage("subcategory"),
+  brand: generateMessage("brand"),
   file:{required:'file is required '}
 };

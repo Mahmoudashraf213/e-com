@@ -1,4 +1,5 @@
-import { deleteFile } from './file-functions.js';
+import { deleteCloudImage } from "./cloud.js";
+import { deleteFile } from "./file-functions.js";
 // Custom AppError class
 export class AppError extends Error {
   constructor(message, statusCode) {
@@ -19,10 +20,13 @@ export const asyncHandler = (fn) => {
 };
 
 // Global error handler
-export const globalErrorHandling = (err, req, res, next) => {
+export const globalErrorHandling = async (err, req, res, next) => {
   // Set default status code and message if not provided
-  if(req.file){ 
+  if (req.file) {
     deleteFile(req.file.path);
+  }
+  if (req.failImage) {
+    await deleteCloudImage(req.failImage.public_id);
   }
   const statusCode = err.statusCode || 500;
   const message = err.message || "Internal Server Error";

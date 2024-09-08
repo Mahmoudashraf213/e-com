@@ -3,14 +3,10 @@ import fs from "fs";
 import path from "path";
 import { nanoid } from "nanoid";
 import multer, { diskStorage } from "multer";
+import { fileValidation } from "./multer.js";
 
-const fileValidation = {
-  image: ["image/jpeg", "image/png", "image/gif"], // تم تعديل "image/jpg" إلى "image/jpeg"
-  file: ["application/pdf", "application/msword"],
-  video: ["video/mp4"],
-};
 
-export const cloudUploads = ({  allowFile = fileValidation.image }) => {
+export const cloudUploads = ({  allowFile = fileValidation.image }= {}) => {
   const storage = diskStorage({});
 
   const fileFilter = (req, file, cb) => {
