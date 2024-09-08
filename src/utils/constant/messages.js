@@ -11,5 +11,6 @@ export const messages = {
   category: generateMessage("category"),
   subcategory: generateMessage("subcategory"),
   brand: generateMessage("brand"),
+  product:generateMessage("product"),
   file:{required:'file is required '}
 };

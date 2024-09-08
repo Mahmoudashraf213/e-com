@@ -8,6 +8,8 @@ import {bootStrap} from "./src/bootStrap.js";
 const app = express();
 const port = 3000;
 dotenv.config({path: path.resolve('./config/.env')})
+// console.log(process.env.DB_URL);
+
 // connect to db
 connectDB();
 // pares req

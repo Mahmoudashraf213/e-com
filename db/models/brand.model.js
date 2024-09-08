@@ -20,7 +20,7 @@ const brandSchema = new Schema(
     logo:{
       secure_url:{
             type: String,
-            required: true,
+            required:true,
       },
       public_id:{
             type: String,
