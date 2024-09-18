@@ -45,7 +45,7 @@ export const addSubcategory = async (req, res, next) => {
     data:createdSubcategory
   });
 };
-
+// get subcategory specific
 export const getSubcategory= async (req, res,next) => {
   // get data from db
   const {categoryId} = req.params

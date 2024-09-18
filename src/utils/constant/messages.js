@@ -12,5 +12,13 @@ export const messages = {
   subcategory: generateMessage("subcategory"),
   brand: generateMessage("brand"),
   product:generateMessage("product"),
-  file:{required:'file is required '}
+  user:generateMessage("user"),
+  file:{required:'file is required '},
+  user: {
+    ...generateMessage('user'),
+    verified: "user verified successfully",
+    invalidCredntiols: "invalid Credntiols",
+    notVerified: "not Verified",
+    loginSuccessfully: "login successfully",
+  }
 };

@@ -22,11 +22,19 @@ export const asyncHandler = (fn) => {
 // Global error handler
 export const globalErrorHandling = async (err, req, res, next) => {
   // Set default status code and message if not provided
+  // rollback file system
   if (req.file) {
     deleteFile(req.file.path);
   }
+  // rollback cloud
   if (req.failImage) {
     await deleteCloudImage(req.failImage.public_id);
+  }
+  // delete multi image
+  if (req.failImages?.length > 0) {
+    for (const public_id of req.failImages) {
+      await deleteCloudImage(public_id);
+    }
   }
   const statusCode = err.statusCode || 500;
   const message = err.message || "Internal Server Error";

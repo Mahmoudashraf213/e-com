@@ -1,5 +1,5 @@
 import { globalErrorHandling } from "./utils/appError.js";
-import { brandRouter, categoryRouter,productRouter,subcategoryRouter } from "./modules/index.js";
+import { authRouter, brandRouter, categoryRouter,productRouter,subcategoryRouter } from "./modules/index.js";
 
 export const bootStrap = (app,express) => {
   // parse req
@@ -11,6 +11,7 @@ export const bootStrap = (app,express) => {
   app.use('/subcategory',subcategoryRouter)
   app.use('/brand',brandRouter)
   app.use('/product',productRouter)
+  app.use('/auth',authRouter)
   // golabl error handler
   app.use(globalErrorHandling)
 }

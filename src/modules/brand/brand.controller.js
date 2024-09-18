@@ -4,6 +4,7 @@ import { AppError } from "../../utils/appError.js";
 import { messages } from "../../utils/constant/messages.js";
 import cloudinary from "../../utils/cloud.js";
 
+// add Brand  
 export const addBrand = async (req, res, next) => {
   // get data from db
   let { name } = req.body;
@@ -43,6 +44,7 @@ export const addBrand = async (req, res, next) => {
   });
 };
 
+// update brand
 export const updateBrand = async (req, res, next) => {
   // get data from req
   let { name } = req.body;

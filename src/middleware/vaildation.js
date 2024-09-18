@@ -10,8 +10,8 @@ const parseArray = (value, helper) => {
   if (error) {
     return helper(error.details);
   }
-  return true
-}
+  return true;
+};
 export const generalFields = {
   name: joi.string(),
   description: joi.string().max(2000),
@@ -23,6 +23,12 @@ export const generalFields = {
   sizes: joi.custom(parseArray),
   rate: joi.number().min(1).max(5),
   discountType: joi.string().valid(...Object.values(discountTypes)),
+  email: joi.string().email(),
+  phone:joi.string().pattern(new RegExp(/^(00201|\+201|01)[0-2,5]{1}[0-9]{8}$/)),
+  password: joi.string().pattern(new RegExp(/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/)),
+  cpassword: joi.string().valid(joi.ref("password")),
+  status: joi.string().valid("pending", "verified", "blocked"),
+  DOB: joi.string(),
 };
 
 // Define a schema using generalFields or another schema you need
