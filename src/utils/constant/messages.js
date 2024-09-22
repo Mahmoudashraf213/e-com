@@ -1,6 +1,5 @@
-
 const generateMessage = (entity) => ({
-  alreadyExist: `${entity} already entity exist`,
+  alreadyExist: `${entity} already exist`,
   notFound: `${entity} not found`,
   failToCreate: `fail to create ${entity} `,
   failToUpdate: `fail to update ${entity} `,
@@ -11,14 +10,15 @@ export const messages = {
   category: generateMessage("category"),
   subcategory: generateMessage("subcategory"),
   brand: generateMessage("brand"),
-  product:generateMessage("product"),
-  user:generateMessage("user"),
-  file:{required:'file is required '},
+  product: generateMessage("product"),
+  user: generateMessage("user"),
+  file: { required: "file is required " },
   user: {
-    ...generateMessage('user'),
+    ...generateMessage("user"),
     verified: "user verified successfully",
     invalidCredntiols: "invalid Credntiols",
     notVerified: "not Verified",
     loginSuccessfully: "login successfully",
-  }
+    notAuthorized: "not authorized to access this api",
+  },
 };

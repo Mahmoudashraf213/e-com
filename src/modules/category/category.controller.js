@@ -33,7 +33,7 @@ export const addCategory = async (req, res, next) => {
   }
   // send response
   return res.status(201).json({
-    messages: messages.category.createCategory,
+    messages: messages.category.createdCategory,
     success: true,
     date: createdCategory,
   });
